@@ -3,7 +3,13 @@ require 'conexao.php';
 session_start();
 
 if ($_SESSION['log'] != "ok") {
+	?>
+	<script>
+		window.alert("Você não está logado!");
+	</script>
+	<?php
     header('Location: index.php');
+	
 }
 
 try {
@@ -38,6 +44,7 @@ try {
   </script>
 </head>
 <body>
+<a href="logoff.php">Sair</a>
   <div class="container" id="tabs">
     <ul>
       <li><a href="#tabs-1">Perfil</a></li>
