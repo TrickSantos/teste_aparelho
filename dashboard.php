@@ -71,6 +71,7 @@ try {
 				</tbody>
 			  </table>
 			  <a id="down"class="btn btn-default pull-right" onclick="location.href ='perfil.php';">Exportar PDF</a>
+			  <a id="down"class="btn btn-default pull-left" onclick="location.href ='ref/csv.php';">Exportar CSV</a>
 			</div>
 		</div>
     </div>

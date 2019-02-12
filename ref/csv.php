@@ -1,21 +1,16 @@
 <?php
-
+require '..\conexao.php';
 header("Content-type: text/csv");
-header("Content-Disposition: attachment; filename=file.csv");
-header("Pragma: no-cache");
-header("Expires: 0");
+header("Content-Disposition: attachment; filename=perfil.csv");
 
-outputCSV(array(
-    array("name 1", "age 1", "city 1"),
-    array("name 2", "age 2", "city 2"),
-    array("name 3", "age 3", "city 3")
-));
+$saida = fopen('php://output','w');
 
-function outputCSV($data) {
-    $output = fopen("php://output", "w");
-    foreach ($data as $row) {
-        fputcsv($output, $row); // here you can change delimiter/enclosure
-    }
-    fclose($output);
+$p = "select * from usuarios";
+$dbh = new PDO($dsn);
+$stmt = $dbh->query($p);
+$perfil = $stmt->fetchAll();
+
+foreach($perfil as $r){
+	fputcsv($saida, $r);
 }
 ?>

@@ -48,6 +48,6 @@ try {
     </div>
     <div class="modal-footer">
       <a id="down"class="btn btn-default pull-right" onclick="location.href ='rel_pdf.php?perfil=<?php echo $id?>';">Exportar PDF</a>
-      <a id="down"class="btn btn-default pull-right" onclick="location.href ='dashboard.php#tabs-3';">Voltar</a>
+      <a id="down"class="btn btn-default pull-left" onclick="location.href ='dashboard.php';">Voltar</a>
     </div>
   </div>
